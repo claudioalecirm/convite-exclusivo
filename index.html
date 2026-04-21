@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mesa de Governo</title>
+<title>Mesa de Governo — Convite Exclusivo</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --gold: #C9A84C;
     --gold-light: #E8C96A;
@@ -16,7 +15,6 @@
     --text: #F0E8D8;
     --text-muted: #9A8A70;
   }
-
   body {
     background-color: var(--near-black);
     color: var(--text);
@@ -28,7 +26,6 @@
     justify-content: center;
     overflow-x: hidden;
   }
-
   body::before {
     content: "";
     position: fixed;
@@ -39,7 +36,6 @@
     pointer-events: none;
     z-index: 0;
   }
-
   .container {
     position: relative;
     z-index: 1;
@@ -49,226 +45,115 @@
     text-align: center;
     animation: fadeUp 0.9s ease both;
   }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
-  .logo-wrap {
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: center;
-  }
-
+  .logo-wrap { margin-bottom: 16px; display: flex; justify-content: center; }
   .logo-wrap img {
-    width: 170px;
-    height: auto;
+    width: 170px; height: auto;
     filter: drop-shadow(0 0 30px rgba(201,168,76,0.55)) drop-shadow(0 0 8px rgba(201,168,76,0.3));
   }
-
   .eyebrow {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 14px;
+    font-size: 11px; font-weight: 500; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
   }
-
   h1 {
     font-family: "Playfair Display", serif;
     font-size: clamp(2rem, 6vw, 2.8rem);
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--text);
-    margin-bottom: 10px;
+    font-weight: 900; line-height: 1.1; color: var(--text); margin-bottom: 10px;
   }
-
   h1 span { color: var(--gold); }
-
   .divider {
-    width: 60px;
-    height: 1px;
+    width: 60px; height: 1px;
     background: linear-gradient(to right, transparent, var(--gold), transparent);
     margin: 18px auto;
   }
-
   .subtitle {
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 1.65;
-    color: var(--text-muted);
-    margin-bottom: 32px;
+    font-size: 1.05rem; font-weight: 300; line-height: 1.65;
+    color: var(--text-muted); margin-bottom: 32px;
   }
-
   .field { margin-bottom: 16px; text-align: left; }
-
   label {
-    display: block;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    margin-bottom: 7px;
+    display: block; font-size: 10px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold-dark); margin-bottom: 7px;
   }
-
   .label-optional {
-    font-size: 9px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: none;
-    color: rgba(201,168,76,0.4);
-    margin-left: 6px;
+    font-size: 9px; font-weight: 400; letter-spacing: 1px;
+    text-transform: none; color: rgba(201,168,76,0.4); margin-left: 6px;
   }
-
   input {
     width: 100%;
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(201,168,76,0.25);
-    border-radius: 4px;
-    padding: 14px 18px;
-    font-family: "Barlow", sans-serif;
-    font-size: 1rem;
-    color: var(--text);
-    outline: none;
+    border-radius: 4px; padding: 14px 18px;
+    font-family: "Barlow", sans-serif; font-size: 1rem;
+    color: var(--text); outline: none;
     transition: border-color 0.2s, background 0.2s;
   }
-
   input::placeholder { color: rgba(240,232,216,0.22); }
-  input:focus {
-    border-color: var(--gold);
-    background: rgba(201,168,76,0.05);
-  }
-
-  /* Campo de indicação com destaque sutil */
-  .field-indicacao input {
-    border-style: dashed;
-    border-color: rgba(201,168,76,0.18);
-  }
-  .field-indicacao input:focus {
-    border-style: solid;
-    border-color: var(--gold);
-  }
-
+  input:focus { border-color: var(--gold); background: rgba(201,168,76,0.05); }
+  .field-indicacao input { border-style: dashed; border-color: rgba(201,168,76,0.18); }
+  .field-indicacao input:focus { border-style: solid; border-color: var(--gold); }
   .divider-form {
-    width: 100%;
-    height: 1px;
+    width: 100%; height: 1px;
     background: linear-gradient(to right, transparent, rgba(201,168,76,0.15), transparent);
     margin: 20px 0;
   }
-
   .btn {
-    width: 100%;
-    margin-top: 12px;
-    padding: 16px 24px;
+    width: 100%; margin-top: 12px; padding: 16px 24px;
     background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-light) 100%);
-    border: none;
-    border-radius: 4px;
-    font-family: "Barlow", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3.5px;
-    text-transform: uppercase;
-    color: var(--near-black);
-    cursor: pointer;
+    border: none; border-radius: 4px;
+    font-family: "Barlow", sans-serif; font-size: 12px;
+    font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase;
+    color: var(--near-black); cursor: pointer;
     transition: opacity 0.2s, transform 0.15s, box-shadow 0.3s;
     box-shadow: 0 4px 28px rgba(201,168,76,0.25);
   }
-
   .btn:hover:not(:disabled) {
-    opacity: 0.9;
-    box-shadow: 0 6px 40px rgba(201,168,76,0.45);
+    opacity: 0.9; box-shadow: 0 6px 40px rgba(201,168,76,0.45);
     transform: translateY(-1px);
   }
-
   .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
-
-  .error-msg {
-    color: #E07070;
-    font-size: 0.82rem;
-    margin-top: 12px;
-    display: none;
-  }
+  .error-msg { color: #E07070; font-size: 0.82rem; margin-top: 12px; display: none; }
 
   /* SUCESSO */
-  #success-section {
-    display: none;
-    animation: fadeUp 0.7s ease both;
-  }
-
+  #success-section { display: none; animation: fadeUp 0.7s ease both; }
   .check-ring {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
+    width: 72px; height: 72px; border-radius: 50%;
     border: 2px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 28px;
-    animation: pulse 2.5s ease infinite;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px; animation: pulse 2.5s ease infinite;
   }
-
   @keyframes pulse {
     0%,100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.45); }
     50%      { box-shadow: 0 0 0 16px rgba(201,168,76,0); }
   }
-
   .success-title {
     font-family: "Playfair Display", serif;
-    font-size: clamp(1.55rem, 5vw, 2.1rem);
-    font-weight: 900;
-    color: var(--text);
-    line-height: 1.25;
-    margin-bottom: 18px;
+    font-size: clamp(1.55rem, 5vw, 2.05rem);
+    font-weight: 900; color: var(--text); line-height: 1.3; margin-bottom: 20px;
   }
-
   .success-title span { color: var(--gold); }
-
   .success-body {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 32px;
+    font-size: 1rem; font-weight: 300; color: var(--text-muted);
+    line-height: 1.75; margin-bottom: 32px;
   }
-
   .event-card {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 14px;
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 6px;
-    padding: 16px 22px;
-    background: rgba(201,168,76,0.06);
-    text-align: left;
+    display: inline-flex; align-items: flex-start; gap: 14px;
+    border: 1px solid rgba(201,168,76,0.3); border-radius: 6px;
+    padding: 16px 22px; background: rgba(201,168,76,0.06); text-align: left;
   }
-
   .event-card svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
-
-  .event-card p {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--gold-light);
-    line-height: 1.5;
-  }
-
+  .event-card p { font-size: 0.95rem; font-weight: 500; color: var(--gold-light); line-height: 1.5; }
   .event-card p small {
-    display: block;
-    font-weight: 300;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-top: 3px;
-    line-height: 1.5;
+    display: block; font-weight: 300; font-size: 0.82rem;
+    color: var(--text-muted); margin-top: 3px; line-height: 1.6;
   }
-
   .footer-line {
-    margin-top: 44px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(201,168,76,0.25);
+    margin-top: 44px; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(201,168,76,0.25);
   }
 </style>
 </head>
@@ -289,24 +174,19 @@
 
   <!-- FORMULÁRIO -->
   <div id="form-section">
-
     <div class="field">
       <label for="nome">Seu nome</label>
       <input type="text" id="nome" placeholder="Como você é chamado" autocomplete="name">
     </div>
-
     <div class="field">
       <label for="whatsapp">WhatsApp</label>
       <input type="tel" id="whatsapp" placeholder="(43) 99999-9999" autocomplete="tel">
     </div>
-
     <div class="field">
       <label for="email">E-mail</label>
       <input type="email" id="email" placeholder="seu@email.com" autocomplete="email">
     </div>
-
     <div class="divider-form"></div>
-
     <div class="field field-indicacao">
       <label for="indicado_por">
         Quem te presenteou com este lugar?
@@ -314,7 +194,6 @@
       </label>
       <input type="text" id="indicado_por" placeholder="Nome de quem te indicou">
     </div>
-
     <button class="btn" id="submit-btn" onclick="enviar()">Confirmar meu lugar</button>
     <p class="error-msg" id="error-msg">Preencha nome, WhatsApp e e-mail corretamente.</p>
   </div>
@@ -327,19 +206,21 @@
       </svg>
     </div>
     <h2 class="success-title">
-      Parabéns — você acabou de<br>dar o <span>primeiro passo</span><br>para acessar seu próximo nível.
+      Parabéns — você acabou de dar<br>o <span>primeiro passo</span> rumo<br>ao seu próximo nível.
     </h2>
     <p class="success-body">
-      Te espero dia 30 às 18h30.<br>
-      Verifique seu e-mail — a confirmação já está lá.
+      Te espero na Mesa de Governo <strong style="color:var(--gold)">dia 30/04</strong>.<br><br>
+      Fique tranquilo — já enviei para o seu e-mail<br>
+      todas as informações do evento.<br><br>
+      <span style="color:var(--text);font-weight:500;">Te espero lá. Abraço.</span>
     </p>
     <div class="event-card">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
       </svg>
       <p>
-        Mesa de Governo — Londrina
-        <small>30 de abril · 18h30<br>Av. Juvenal Pietraroia, 519 – Columbia</small>
+        Av. Juvenal Pietraroia, 519 – Columbia
+        <small>Londrina – PR, 86055-000<br>30 de abril · 18h30</small>
       </p>
     </div>
   </div>
@@ -351,7 +232,6 @@
   const SUPABASE_URL = "https://lymmzhslhwidqcztcfsn.supabase.co";
   const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5bW16aHNsaHdpZHFjenRjZnNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2ODI2ODMsImV4cCI6MjA5MTI1ODY4M30.BLlPs4BbxuV3TtCfPJz01fVbBsOBTEJmeTGMvTNkHEk";
 
-  // Máscara WhatsApp
   document.getElementById("whatsapp").addEventListener("input", function(e) {
     let v = e.target.value.replace(/\D/g, "").slice(0, 11);
     if (v.length > 10)     v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
@@ -365,12 +245,12 @@
   });
 
   async function enviar() {
-    const nome        = document.getElementById("nome").value.trim();
-    const whatsapp    = document.getElementById("whatsapp").value.trim();
-    const email       = document.getElementById("email").value.trim();
+    const nome         = document.getElementById("nome").value.trim();
+    const whatsapp     = document.getElementById("whatsapp").value.trim();
+    const email        = document.getElementById("email").value.trim();
     const indicado_por = document.getElementById("indicado_por").value.trim();
-    const errEl       = document.getElementById("error-msg");
-    const btn         = document.getElementById("submit-btn");
+    const errEl        = document.getElementById("error-msg");
+    const btn          = document.getElementById("submit-btn");
 
     if (!nome || !whatsapp || !email || !email.includes("@")) {
       errEl.style.display = "block";
@@ -381,7 +261,7 @@
     btn.textContent = "Confirmando...";
 
     try {
-      // 1. Salva no banco
+      // 1. Salva no Supabase
       const payload = { nome, whatsapp, email };
       if (indicado_por) payload.indicado_por = indicado_por;
 
@@ -396,10 +276,14 @@
         body: JSON.stringify(payload)
       });
 
-      if (!res.ok) throw new Error("Erro ao salvar.");
+      if (!res.ok) {
+        const errBody = await res.text();
+        console.error("Supabase error:", res.status, errBody);
+        throw new Error("Erro ao salvar: " + res.status);
+      }
 
-      // 2. Dispara email de confirmação
-      await fetch(SUPABASE_URL + "/functions/v1/send-confirmation-email", {
+      // 2. Dispara email — não bloqueia o sucesso se falhar
+      fetch(SUPABASE_URL + "/functions/v1/send-confirmation-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -407,16 +291,18 @@
           "Authorization": "Bearer " + SUPABASE_KEY
         },
         body: JSON.stringify({ nome, email, indicado_por })
-      });
+      }).catch(e => console.warn("Email error (non-blocking):", e));
 
-      // 3. Mostra tela de sucesso
+      // 3. Mostra sucesso
       document.getElementById("form-section").style.display = "none";
       document.getElementById("success-section").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
     } catch (err) {
+      console.error(err);
       btn.disabled = false;
       btn.textContent = "Confirmar meu lugar";
-      errEl.textContent = "Ocorreu um erro. Tente novamente.";
+      errEl.textContent = "Ocorreu um erro. Tente novamente em instantes.";
       errEl.style.display = "block";
     }
   }
